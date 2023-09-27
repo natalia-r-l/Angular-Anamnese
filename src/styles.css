@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  --rm-primary:#016599;
+  --rm-primary-light: #6ecceb;
+  --rm-primary-dark: #05344e;
+  --rm-hover:#025e8f ;
+  --rm-white: #FFFFFF;
+  --rm-highlight: #f5a623;
+}
+
+
+
+
+
+
