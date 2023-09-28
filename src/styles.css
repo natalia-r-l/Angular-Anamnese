@@ -5,6 +5,10 @@ body{
   --rm-hover:#025e8f ;
   --rm-white: #FFFFFF;
   --rm-highlight: #f5a623;
+  --rm-gray-light: #e9ecef;
+  --rm-gray-medium: #ced4da;
+  --rm-gray-dark: #adb5bd;
+  --rm-alert: #D01110;
 }
 
 
