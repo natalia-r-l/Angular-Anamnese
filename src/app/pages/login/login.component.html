@@ -1,57 +1,61 @@
-<div class="container-fluid ">
+<div class="container-fluid">
   <div class="row login-section d-flex align-items-center">
     <div class="col-12">
-      <div class="login-form" >
-        <h2>Já é nosso cliente?</h2>
-          <h5>Faça o seu login</h5>
-          <form [formGroup]="form">
-            <div class="input-field">
-              <label for="note">Usuário</label>
+      <div class="login-form">
+        <img
+          src="../../../assets/images/blue-logo.png"
+          alt="Logo do Sistema Anamnese"
+          class="logo"
+        />
+        <h4>Já é nosso cliente?</h4>
+        <h6>Faça o seu login</h6>
+        <form [formGroup]="form">
+          <div class="input-field">
+            <label for="note">Usuário</label>
             <input
               type="textarea"
-              class="input "
+              class="input"
               id="email"
               formControlName="email"
               placeholder="email@email.com"
             />
             <div
-              class="error-message "
+              class="error-message"
               *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched"
             >
               O campo usuário não pode estar em branco.
             </div>
             <div
-              class="error-message "
+              class="error-message"
               *ngIf="form.get('email')?.errors?.['minlength'] && form.get('email')?.touched"
             >
               Este campo deve ter pelo menos 6 caracteres.
             </div>
-
+          </div>
+          <div class="input-field">
+            <label for="note">Senha</label>
+            <input
+              type="textarea"
+              class="input"
+              id="password"
+              formControlName="password"
+              placeholder="senha"
+            />
+            <div
+              class="error-message"
+              *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched"
+            >
+              O campo de senha não pode estar em branco.
             </div>
-            <div class="input-field">
-              <label for="note">Senha</label>
-              <input
-                type="textarea"
-                class="input "
-                id="password"
-                formControlName="password"
-                placeholder="senha"
-              />
-              <div
-                class="error-message "
-                *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched"
-              >
-                O campo de senha não pode estar em branco.
-              </div>
-              <div
-                class="error-message "
-                *ngIf="form.get('password')?.errors?.['minlength'] && form.get('password')?.touched"
-              >
-                Este campo deve ter pelo menos 6 caracteres.
-              </div>
+            <div
+              class="error-message"
+              *ngIf="form.get('password')?.errors?.['minlength'] && form.get('password')?.touched"
+            >
+              Este campo deve ter pelo menos 6 caracteres.
             </div>
-          </form>
-          <a href="#" class="btn login-btn">Entrar</a>
+          </div>
+        </form>
+        <a href="#" class="btn login-btn">Entrar</a>
       </div>
     </div>
   </div>

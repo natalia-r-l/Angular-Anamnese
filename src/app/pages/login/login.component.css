@@ -1,14 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-h2{
-  padding-top: 30px;
+h6{
   font-weight: 700;
-  color: var(--rm-primary-dark);
+  color: var(--rm-primary);
 }
 
-h5{
-  padding-bottom: 30px;
-  color: var(--rm-primary-dark);
+h4{
+  color: var(--rm-primary);
 }
 
 .container-fluid{
@@ -24,13 +22,10 @@ h5{
   padding: 0;
 }
 
-/*
+
 .logo{
-  color: var(--rm-highlight);
-  font-family: 'Montserrat', sans-serif;
-  font-size: large;
-  padding-top: 40px;
-}*/
+ margin-top: 15px;
+}
 
 .login-section{
   height: 100vh;
@@ -46,7 +41,7 @@ h5{
 .login-form{
   background-color: var(--rm-white);
   width: 350px;
-  height: 400px;
+  height: 440px;
   margin: auto;
   border-radius: 20px;
 }
@@ -97,7 +92,7 @@ form .input::placeholder {
 .login-btn{
   background-color: var(--rm-primary-dark);
   color: var(--rm-white);
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .error-message {

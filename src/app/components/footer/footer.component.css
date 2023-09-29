@@ -1,23 +1,21 @@
 .container-fluid{
-  background-color: var(--rm-primary-light);
-  height: 80px;
+  background-color: var(--rm-primary);
+  height: 150px;
   width: 100vw;
-  position: fixed;
   left: 0;
   bottom: 0;
   display: flex;
   text-align: center;
-
 }
 
 .footer{
-  justify-content: space-around;
   align-items: center;
   width: 100vw;
 }
 
-.author{
+.copy{
   font-weight: 500;
+  padding-top: 20px;
   margin: 0;
-
+  color: var(--rm-white);
 }
