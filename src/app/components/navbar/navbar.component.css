@@ -1,0 +1,17 @@
+.navbar{
+  background-color: var(--rm-primary-light);
+  height: 70px;
+  padding: 0px 20px 0px 20px;
+}
+
+.navbar-brand{
+  color: var(--rm-primary-dark);
+  font-weight: 700;
+}
+
+.logout{
+  font-size: 16px;
+  color: var(--rm-primary-dark);
+  font-weight: 500;
+  margin: 0;
+}
