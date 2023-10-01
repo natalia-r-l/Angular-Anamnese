@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Anamnese } from 'src/app/anamnese';
+import { AnamneseService } from 'src/app/anamnese.service';
 
 @Component({
   selector: 'app-table',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  @Input() anamnese: Anamnese = {
+    id: 0,
+    paciente:'',
+    data:0,
+    dentista:'',
+  }
+
+  constructor(private ananmeseService : AnamneseService) { }
 
   ngOnInit(): void {
+    this.listarAnamnese();
+    //this.buscarUm();
+    this.searchForDentist();
   }
+
+  listarAnamnese(){
+    this.ananmeseService.listarAnamnese().subscribe( response => {
+      console.log("anamnese:", response);
+    })
+  }
+
+  buscarUm(){
+    this.ananmeseService.listarUm().subscribe( response => {
+      console.log("anamnese:", response);
+    })
+  }
+
+ searchForDentist(){
+  this.ananmeseService.searchForDentist().subscribe( response => {
+    console.log("dentista:", response);
+  })
+ }
 
 }

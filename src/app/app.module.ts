@@ -9,6 +9,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TableComponent } from './components/table/table.component';
+import { AnamneseComponent } from './anamnese/anamnese.component';
+import { AnamneseListComponent } from './anamnese-list/anamnese-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import { TableComponent } from './components/table/table.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    TableComponent
+    TableComponent,
+    AnamneseComponent,
+    AnamneseListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
