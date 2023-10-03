@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private bnIdle: BnNgIdleService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
+    this.bnIdle.startWatching(5).subscribe((isTimedOut: boolean) => {
+      if (isTimedOut) {
+        localStorage.removeItem('token');
+        this.router.navigate(['/login']);
+        this.bnIdle.stopTimer();
+      }
+    });
   }
 
 }

@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -32,6 +33,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     HttpClientModule,
   ],
   providers: [
+    BnNgIdleService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
