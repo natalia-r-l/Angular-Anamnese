@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { Anamnese } from 'src/app/anamnese';
+import { Anamnese } from '../../model/anamnese';
 
 import { AuthService } from 'src/app/services/auth.service';
 import { AnamneseService } from 'src/app/services/anamnese.service';

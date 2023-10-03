@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Anamnese } from 'src/app/anamnese';
+import { Anamnese } from '../model/anamnese';
 import { ErrorHandlerService } from './errorHandlerService.service';
 
 

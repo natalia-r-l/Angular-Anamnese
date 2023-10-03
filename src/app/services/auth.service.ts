@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first, catchError, tap } from 'rxjs/operators';
 
 import { ErrorHandlerService } from './errorHandlerService.service';
-import { Anamnese } from 'src/app/anamnese';
+import { Anamnese } from '../model/anamnese';
 
 @Injectable({
   providedIn: 'root'
