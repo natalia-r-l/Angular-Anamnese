@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Anamnese } from 'src/app/anamnese';
-import { AnamneseService } from 'src/app/services/anamnese.service';
 
 @Component({
   selector: 'app-table',
@@ -16,7 +15,6 @@ export class TableComponent implements OnInit {
     dentista:'',
   }
 
-  constructor(private ananmeseService : AnamneseService) { }
 
   ngOnInit(): void {
     //this.listarAnamnese();

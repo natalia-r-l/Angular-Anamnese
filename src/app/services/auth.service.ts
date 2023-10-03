@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 
-export class AnamneseService {
+export class AuthService {
 
   private url = 'http://localhost:3000/auth';
 
@@ -28,15 +28,6 @@ export class AnamneseService {
     private errorHandlerService: ErrorHandlerService,
     private router: Router
   ) { }
-
-  sigup(anamnese: Omit<Anamnese, "id">): Observable<Anamnese>{
-    return this.httpclient
-    .post<Anamnese>(`${this.url}/signup`, anamnese, this.httpOptions)
-    .pipe(
-      first(),
-      catchError(this.errorHandlerService.handleError<Anamnese>("signup"))
-    );
-  }
 
   login(
     dentista: Pick<Anamnese, "dentista">

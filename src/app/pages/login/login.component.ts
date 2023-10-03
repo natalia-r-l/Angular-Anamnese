@@ -1,7 +1,8 @@
-import { AnamneseService } from 'src/app/services/anamnese.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClientService } from 'src/app/services/client.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { DentistaService } from 'src/app/services/dentista.service';
+
 
 @Component({
   selector: 'app-login',
@@ -14,8 +15,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private anamneseService: AnamneseService,
-    private clientService: ClientService
+    private authService: AuthService,
+    private dentistaService: DentistaService,
   ) { }
 
   ngOnInit(): void {
@@ -33,8 +34,8 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.anamneseService.login(this.form.value.dentista).subscribe((response) => {
-      this.clientService.setClient(response.dentista)
+    this.authService.login(this.form.value.dentista).subscribe((response) => {
+      this.dentistaService.setDentista(response.dentista)
     })
   }
 
