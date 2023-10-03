@@ -9,4 +9,11 @@
   color: var(--rm-white);
   font-weight: 500;
   margin: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.logout:hover{
+  text-decoration: underline;
+  text-underline-offset: 4px
 }

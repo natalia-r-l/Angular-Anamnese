@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.bnIdle.startWatching(5).subscribe((isTimedOut: boolean) => {
+    this.bnIdle.startWatching(300).subscribe((isTimedOut: boolean) => {
       if (isTimedOut) {
         localStorage.removeItem('token');
         this.router.navigate(['/login']);
