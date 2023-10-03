@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Anamnese } from 'src/app/anamnese';
-import { AnamneseService } from 'src/app/anamnese.service';
+import { AnamneseService } from 'src/app/services/anamnese.service';
 
 @Component({
   selector: 'app-table',
@@ -19,11 +19,12 @@ export class TableComponent implements OnInit {
   constructor(private ananmeseService : AnamneseService) { }
 
   ngOnInit(): void {
-    this.listarAnamnese();
+    //this.listarAnamnese();
     //this.buscarUm();
-    this.searchForDentist();
+    //this.searchForDentist();
   }
 
+  /*
   listarAnamnese(){
     this.ananmeseService.listarAnamnese().subscribe( response => {
       console.log("anamnese:", response);
@@ -40,6 +41,6 @@ export class TableComponent implements OnInit {
   this.ananmeseService.searchForDentist().subscribe( response => {
     console.log("dentista:", response);
   })
- }
+ }*/
 
 }

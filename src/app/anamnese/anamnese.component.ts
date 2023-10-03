@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Anamnese } from '../anamnese';
-import { AnamneseService } from '../anamnese.service';
+import { AnamneseService } from '../services/anamnese.service';
 
 @Component({
   selector: 'app-anamnese',

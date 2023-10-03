@@ -15,24 +15,24 @@
             <input
               type="textarea"
               class="input"
-              id="email"
-              formControlName="email"
-              placeholder="email@email.com"
+              id="dentista"
+              formControlName="dentista"
+              placeholder="dentista"
             />
             <div
               class="error-message"
-              *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched"
+              *ngIf="form.get('dentista')?.errors?.['required'] && form.get('email')?.touched"
             >
               O campo usuário não pode estar em branco.
             </div>
             <div
               class="error-message"
-              *ngIf="form.get('email')?.errors?.['minlength'] && form.get('email')?.touched"
+              *ngIf="form.get('dentista')?.errors?.['minlength'] && form.get('email')?.touched"
             >
               Este campo deve ter pelo menos 6 caracteres.
             </div>
           </div>
-          <div class="input-field">
+          <!-- <div class="input-field">
             <label for="note">Senha</label>
             <input
               type="textarea"
@@ -53,9 +53,15 @@
             >
               Este campo deve ter pelo menos 6 caracteres.
             </div>
-          </div>
+          </div> -->
         </form>
-        <a href="#" class="btn login-btn">Entrar</a>
+        <button
+        (click)="login()"
+        class="btn login-btn"
+      >
+        Entrar
+      </button>
+
       </div>
     </div>
   </div>
