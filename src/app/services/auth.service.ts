@@ -1,12 +1,12 @@
-import { Anamnese } from 'src/app/anamnese';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { Router } from '@angular/router';
 
 import { BehaviorSubject, Observable } from 'rxjs';
 import { first, catchError, tap } from 'rxjs/operators';
-import { ErrorHandlerService } from './errorHandlerService.service';
-import { Router } from '@angular/router';
 
+import { ErrorHandlerService } from './errorHandlerService.service';
+import { Anamnese } from 'src/app/anamnese';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class AuthService {
   private url = 'http://localhost:3000/auth';
 
   isDentistLogged$ = new BehaviorSubject<boolean>(false);
-  anamneseId: Pick<Anamnese, "id"> | any;
+  anamneseId!: Pick<Anamnese, "id">;
 
   httpOptions:{headers:HttpHeaders} = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })
@@ -56,18 +56,5 @@ export class AuthService {
     );
   }
 
-
-  /*
-  listarAnamnese(){
-    return this.httpclient.get(`http://localhost:3000/api/anm_anamnese`);
-  }
-
-  listarUm(){
-    return this.httpclient.get(`http://localhost:3000/api/anm_anamnese/${1}`);
-  }
-
-  searchForDentist(){
-    return this.httpclient.get(`http://localhost:3000/api/anm_anamnese/${'4ac1048f3286eb185b21c3440e882ffc'}`)
-  }*/
 
 }

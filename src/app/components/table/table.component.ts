@@ -1,5 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { Anamnese } from 'src/app/anamnese';
+
+import { AuthService } from 'src/app/services/auth.service';
+import { AnamneseService } from 'src/app/services/anamnese.service';
 
 @Component({
   selector: 'app-table',
@@ -8,37 +13,23 @@ import { Anamnese } from 'src/app/anamnese';
 })
 export class TableComponent implements OnInit {
 
-  @Input() anamnese: Anamnese = {
-    id: 0,
-    paciente:'',
-    data:0,
-    dentista:'',
-  }
+  anamnese$!: Observable<Anamnese[]> ;
+  anamneseId!: Pick<Anamnese, "id"> ;
+
+  constructor(
+  private authService: AuthService,
+  private anamneseService: AnamneseService,
+ ){ }
 
 
   ngOnInit(): void {
-    //this.listarAnamnese();
-    //this.buscarUm();
-    //this.searchForDentist();
+    this.anamnese$ = this.fetchAll();
+    this.anamneseId = this.authService.anamneseId
   }
 
-  /*
-  listarAnamnese(){
-    this.ananmeseService.listarAnamnese().subscribe( response => {
-      console.log("anamnese:", response);
-    })
+  fetchAll(): Observable<Anamnese[]>{
+    return this.anamneseService.fetchAll()
   }
 
-  buscarUm(){
-    this.ananmeseService.listarUm().subscribe( response => {
-      console.log("anamnese:", response);
-    })
-  }
-
- searchForDentist(){
-  this.ananmeseService.searchForDentist().subscribe( response => {
-    console.log("dentista:", response);
-  })
- }*/
 
 }
