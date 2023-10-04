@@ -1,9 +1,28 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Pergunta</th>
+      <th scope="col">Descricao</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pergunta of pergunta$ | async">
+        <td>{{ pergunta.id}}</td>
+        <td>{{ pergunta.descricao}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
       <th scope="col">Código</th>
       <th scope="col">Data</th>
+      <th scope="col">Pergunta</th>
+      <th scope="col">Resposta</th>
       <th scope="col">Paciente</th>
+      <th scope="col">Descricao</th>
       <th scope="col">Detalhes</th>
     </tr>
   </thead>
@@ -12,7 +31,11 @@
 
         <th scope="row">{{ anamnese.id }}</th>
         <td>{{ anamnese.data }}</td>
+        <td>{{ anamnese.pergunta }}</td>
+        <td>{{ anamnese.resposta }}</td>
         <td>{{ anamnese.paciente }}</td>
+
+
         <td>
           <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Ver detalhes
@@ -39,4 +62,4 @@
       </div>
     </tr>
   </tbody>
-</table>
+</table> -->
