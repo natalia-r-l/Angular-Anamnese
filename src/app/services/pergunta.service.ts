@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Pergunta } from '../model/perguntas';
+import { Pergunta } from '../models/perguntas';
 import { ErrorHandlerService } from './errorHandlerService.service';
 
 @Injectable({

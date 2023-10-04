@@ -4,16 +4,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Anamnese } from '../models/anamnese';
+import { Resposta } from '../models/respostas';
 import { ErrorHandlerService } from './errorHandlerService.service';
-
 
 @Injectable({
   providedIn: 'root'
 })
-export class AnamneseService {
+export class RespostasService {
 
-  private url = 'http://localhost:3000/anamneses';
+  private url = 'http://localhost:3000/respostas';
 
   httpOptions:{headers:HttpHeaders} = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })
@@ -24,14 +23,12 @@ export class AnamneseService {
     private errorHandlerService: ErrorHandlerService,
     ) { }
 
-  fetchAll(): Observable<Anamnese[]> {
+    fetchAllAnswers(): Observable<Resposta[]> {
     const token = localStorage.getItem('token');
     return this.httpClient
-    .get<Anamnese[]>(this.url, {responseType: "json"})
+    .get<Resposta[]>(this.url, {responseType: "json"})
     .pipe(
-      catchError(this.errorHandlerService.handleError<Anamnese[]>("fetchAll", []))
+      catchError(this.errorHandlerService.handleError<Resposta[]>("fetchAllAnswers", []))
     )
   }
-
-
 }

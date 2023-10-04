@@ -6,8 +6,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { first, catchError, tap } from 'rxjs/operators';
 
 import { ErrorHandlerService } from './errorHandlerService.service';
-import { Anamnese } from '../model/anamnese';
-import { Pergunta } from '../model/perguntas';
+import { Anamnese } from '../models/anamnese';
+import { Pergunta } from '../models/perguntas';
+import { Resposta } from '../models/respostas';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,7 @@ export class AuthService {
   isDentistLogged$ = new BehaviorSubject<boolean>(false);
   anamneseId!: Pick<Anamnese, "id">;
   perguntaId!: Pick<Pergunta, "id">;
+  respostaId!: Pick<Resposta, "id">;
 
   httpOptions:{headers:HttpHeaders} = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })

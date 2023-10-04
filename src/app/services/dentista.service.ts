@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Anamnese } from '../model/anamnese';
+import { Anamnese } from '../models/anamnese';
 
 @Injectable({
   providedIn: 'root'

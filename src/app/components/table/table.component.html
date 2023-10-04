@@ -1,6 +1,23 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">ID resposta</th>
+      <th scope="col">Descricao resposta</th>
+      <th scope="col">ID pergunta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let resposta of resposta$ | async">
+        <td>{{ resposta.id}}</td>
+        <td>{{ resposta.descricao}}</td>
+        <td>{{ resposta.pergunta}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
       <th scope="col">Pergunta</th>
       <th scope="col">Descricao</th>
     </tr>
@@ -11,7 +28,7 @@
         <td>{{ pergunta.descricao}}</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 
 <!-- <table class="table table-striped">
