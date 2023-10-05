@@ -38,13 +38,13 @@ export class AuthService {
   ): Observable<{
   token: string;
   anamneseId: Pick<Anamnese, "id">,
-  dentista: Pick<Anamnese, "dentista">
+  dentista: string
   }> {
     return this.httpclient
     .post(`${this.url}/login`, { dentista }, this.httpOptions)
     .pipe(
       first(),
-      tap((tokenObject: { token: string; anamneseId: Pick<Anamnese, "id">, dentista: Pick<Anamnese, "dentista"> } | any) => {
+      tap((tokenObject: { token: string; anamneseId: Pick<Anamnese, "id">, dentista: string } | any) => {
         this.anamneseId = tokenObject.anamneseId;
         localStorage.setItem("token", tokenObject.token);
         this.isDentistLogged$.next(true);
@@ -54,7 +54,7 @@ export class AuthService {
         this.errorHandlerService.handleError<{
         token: string;
         anamneseId: Pick<Anamnese, "id">,
-        dentista: Pick<Anamnese, "dentista">;
+        dentista: string;
       }>("login")
       )
     );

@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Anamnese } from '../models/anamnese';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DentistaService {
 
-  dentista: string | Pick<Anamnese, "dentista"> = '';
+  dentista: string = '';
 
   constructor() { }
 
@@ -14,7 +13,7 @@ export class DentistaService {
     return this.dentista;
   }
 
-  setDentista(novoDentista: string | Pick<Anamnese, "dentista">) {
+  setDentista(novoDentista: string) {
     this.dentista = novoDentista;
   }
 }

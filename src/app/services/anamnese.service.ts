@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 
 import { Anamnese } from '../models/anamnese';
 import { ErrorHandlerService } from './errorHandlerService.service';
@@ -31,6 +31,14 @@ export class AnamneseService {
     .pipe(
       catchError(this.errorHandlerService.handleError<Anamnese[]>("fetchAll", []))
     )
+  }
+
+  findAnamnese(dentista: string) {
+    const token = localStorage.getItem('token');
+    const body = {
+      dentista: dentista
+    }
+    return this.httpClient.post<Anamnese[]>(this.url, body, {responseType: "json"})
   }
 
 

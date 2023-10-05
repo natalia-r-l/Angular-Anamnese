@@ -1,16 +1,16 @@
-<table class="table table-striped">
+ <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID resposta</th>
-      <th scope="col">Descricao resposta</th>
-      <th scope="col">ID pergunta</th>
+      <th scope="col">ID anamnese</th>
+      <th scope="col">Dentista</th>
+      <th scope="col">Paciente</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let resposta of resposta$ | async">
-        <td>{{ resposta.id}}</td>
-        <td>{{ resposta.descricao}}</td>
-        <td>{{ resposta.pergunta}}</td>
+    <tr *ngFor="let anamnese of anamneses">
+        <td>{{ anamnese.id}}</td>
+        <td>{{ anamnese.dentista}}</td>
+        <td>{{ anamnese.paciente}}</td>
     </tr>
   </tbody>
 </table>
@@ -18,47 +18,24 @@
 <!-- <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Anamnese</th>
+      <th scope="col">Paciente</th>
       <th scope="col">Pergunta</th>
-      <th scope="col">Descricao</th>
+      <th scope="col">Descrição</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let pergunta of pergunta$ | async">
+        <td>{{ pergunta.anamnese}}</td>
+        <td>{{ pergunta.paciente}}</td>
         <td>{{ pergunta.id}}</td>
         <td>{{ pergunta.descricao}}</td>
-    </tr>
-  </tbody>
-</table> -->
-
-
-<!-- <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Código</th>
-      <th scope="col">Data</th>
-      <th scope="col">Pergunta</th>
-      <th scope="col">Resposta</th>
-      <th scope="col">Paciente</th>
-      <th scope="col">Descricao</th>
-      <th scope="col">Detalhes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let anamnese of anamnese$ | async">
-
-        <th scope="row">{{ anamnese.id }}</th>
-        <td>{{ anamnese.data }}</td>
-        <td>{{ anamnese.pergunta }}</td>
-        <td>{{ anamnese.resposta }}</td>
-        <td>{{ anamnese.paciente }}</td>
-
-
         <td>
           <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Ver detalhes
           </button>
-        </td>
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </td> -->
+      <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -66,10 +43,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              Bla
-              Bla
-              Bla
-              Bla
+              {{ pergunta.id}} - {{ pergunta.descricao}}
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-modal" data-bs-dismiss="modal">Fechar</button>
@@ -78,5 +52,8 @@
         </div>
       </div>
     </tr>
+
   </tbody>
 </table> -->
+
+
