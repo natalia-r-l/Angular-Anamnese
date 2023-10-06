@@ -6,6 +6,7 @@ import { AuthGuard } from './services/auth-guard.service';
 
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path:'home',
     component: HomeComponent, canActivate: [AuthGuard]
+  },
+  {
+    path:'details/:id',
+    component: DetailsComponent, canActivate: [AuthGuard]
   },
 
 ];

@@ -7,6 +7,7 @@ import { first, catchError, tap } from 'rxjs/operators';
 
 import { ErrorHandlerService } from './errorHandlerService.service';
 import { Anamnese } from '../models/anamnese';
+import { AnamneseDetails } from '../models/anamneseDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class AuthService {
 
   isDentistLogged$ = new BehaviorSubject<boolean>(false);
   anamneseId!: Pick<Anamnese, "id">;
+  anamneseDetailId!: Pick<AnamneseDetails, "id">;
 
   httpOptions:{headers:HttpHeaders} = {
     headers: new HttpHeaders({ "Content-Type": "application/json" })

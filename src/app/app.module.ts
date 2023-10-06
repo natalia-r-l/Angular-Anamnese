@@ -15,6 +15,7 @@ import { TableComponent } from './components/table/table.component';
 
 
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { DetailsComponent } from './pages/details/details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    TableComponent
+    TableComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

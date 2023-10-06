@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID anamnese</th>
+      <th scope="col">Pergunta</th>
+      <th scope="col">Resposta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let anamnesesDetail of anamnesesDetails">
+        <td>{{ anamnesesDetail.id}}</td>
+        <td>{{ anamnesesDetail.pergunta_descricao}}</td>
+        <td>{{ anamnesesDetail.pergunta_resposta}}</td>
+    </tr>
+  </tbody>
+</table>
