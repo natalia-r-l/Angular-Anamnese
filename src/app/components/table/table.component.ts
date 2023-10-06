@@ -33,11 +33,7 @@ export class TableComponent implements OnInit {
     this.anamneseId = this.authService.anamneseId;
   }
 
-  fetchAll(): Observable<Anamnese[]>{
-    return this.anamneseService.fetchAll();
-  }
-
-  findAnamnese(dentista: string) {
+   findAnamnese(dentista: string) {
     this.anamneseService.findAnamnese(dentista).subscribe(response => {
       this.anamneses = response[0];
     })
