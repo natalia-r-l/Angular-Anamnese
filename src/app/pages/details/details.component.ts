@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Anamnese } from 'src/app/models/anamnese';
+
 import { AnamneseDetails } from 'src/app/models/anamneseDetails';
 import { AnamneseDetailsService } from 'src/app/services/anamnese-details.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -15,6 +15,8 @@ export class DetailsComponent implements OnInit {
 
   anamneseDetailId!: Pick<AnamneseDetails, "id">;
   anamnesesDetails!: any;
+  anamneseDetail!: any;
+
 
   dentista!: string;
   id!: number;

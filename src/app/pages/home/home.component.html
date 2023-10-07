@@ -2,9 +2,39 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h4>Bem vindo/a ao Sistema Anamneses</h4>
-      <h5>Lista de Anamneses</h5>
-      <app-table></app-table>
+      <h5>Olá, {{ anamneses[0].dentista }}</h5>
+      <h6>Lista de Anamneses</h6>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover table-sm ">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Data</th>
+              <th scope="col">Paciente</th>
+              <th scope="col" class="d-none d-md-block">Detalhes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let anamnese of anamneses">
+              <td >{{ anamnese.id }}
+              </td>
+              <td >{{ anamnese.data }}</td>
+              <td >{{ anamnese.paciente }}
+                <li class="list-group-item d-md-none" routerLink="/details/{{ anamnese.id }}">Ver detalhes</li>
+              </td>
+              <td>
+                <button
+                type="button"
+                class="btn btn-link d-none d-md-block"
+                routerLink="/details/{{ anamnese.id }}"
+              >
+                Ver detalhes
+              </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

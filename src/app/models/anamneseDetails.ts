@@ -3,4 +3,5 @@ export interface AnamneseDetails{
   pergunta_descricao: string;
   pergunta_resposta: string;
   paciente: string;
+  data: number;
 }

@@ -1,7 +1,7 @@
 .navbar{
   background-color: var(--rm-primary);
   height: 90px;
-  padding: 0px 20px 0px 0px;
+
 }
 
 .logout{
@@ -16,4 +16,8 @@
 .logout:hover{
   text-decoration: underline;
   text-underline-offset: 4px
+}
+
+.logo{
+  cursor: pointer;
 }

@@ -1,14 +1,10 @@
-.container{
-  color: var(--rm-primary-dark);
-}
-
-h4{
+h5{
   display: flex;
   align-items: center;
   margin-top: 30px;
 }
 
-h5{
+h6{
   display: flex;
   align-items: center;
   margin: 10px 0px 40px 0px;
@@ -17,3 +13,18 @@ h5{
 .col-12{
   margin-bottom: 100px;
 }
+
+.btn-link{
+  padding: 0;
+  margin: 0;
+  border: none;
+ }
+
+.list-group-item{
+  margin: 20px 0px 10px 0px;
+  text-decoration: underline;
+  color: var(--rm-primary);
+  cursor: pointer;
+}
+
+

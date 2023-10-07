@@ -1,14 +1,16 @@
-<table class="table table-striped">
+<table class="table table-striped table-hover table-sm table-responsive">
   <thead>
     <tr>
-      <th scope="col">ID anamnese</th>
+      <th scope="col">ID</th>
+      <th scope="col">Data</th>
       <th scope="col">Paciente</th>
-      <th scope="col">Ver Detalhes</th>
+      <th scope="col">Detalhes</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let anamnese of anamneses">
         <td>{{ anamnese.id}}</td>
+        <td>{{ anamnese.data}}</td>
         <td>{{ anamnese.paciente}}</td>
         <td>
           <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#exampleModal"  routerLink="/details/{{anamnese.id}}">
