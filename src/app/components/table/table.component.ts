@@ -16,7 +16,7 @@ export class TableComponent implements OnInit {
   dentista!: string;
 
   anamneses!: any;
-  anamnesesDetails!: any;
+
   anamneseId!: Pick<Anamnese, "id"> ;
 
 

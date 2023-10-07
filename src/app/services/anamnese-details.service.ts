@@ -20,10 +20,10 @@ export class AnamneseDetailsService {
     ) { }
 
 
-  findAnamneseDetails(dentista: string) {
+  findAnamneseDetails(id: string) {
     const token = localStorage.getItem('token');
     const body = {
-      dentista: dentista
+      id: id
     }
     return this.httpClient.post<AnamneseDetails[]>(this.url, body, {responseType: "json"})
   }

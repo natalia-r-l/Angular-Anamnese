@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Anamnese } from 'src/app/models/anamnese';
 import { AnamneseDetails } from 'src/app/models/anamneseDetails';
 import { AnamneseDetailsService } from 'src/app/services/anamnese-details.service';
 import { AuthService } from 'src/app/services/auth.service';
-import { DentistaService } from 'src/app/services/dentista.service';
+
 
 @Component({
   selector: 'app-details',
@@ -13,22 +15,26 @@ export class DetailsComponent implements OnInit {
 
   anamneseDetailId!: Pick<AnamneseDetails, "id">;
   anamnesesDetails!: any;
+
   dentista!: string;
+  id!: number;
 
   constructor(
     private anamneseDetailsService: AnamneseDetailsService,
     private authService: AuthService,
-    private dentistaService: DentistaService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    this.dentista = this.dentistaService.getDentista();
-    this.findAnamneseDetails(this.dentista);
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.findAnamneseDetails(id);
+    }
     this.anamneseDetailId = this.authService.anamneseDetailId;
   }
 
-  findAnamneseDetails(dentista: string){
-    this.anamneseDetailsService.findAnamneseDetails(dentista).subscribe(response => {
+  findAnamneseDetails(id: string){
+    this.anamneseDetailsService.findAnamneseDetails(id).subscribe(response => {
       this.anamnesesDetails = response[0];
     })
   };
