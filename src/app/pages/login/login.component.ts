@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { DentistaService } from 'src/app/services/dentista.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,20 +22,21 @@ export class LoginComponent implements OnInit {
     this.form = this.formBuilder.group({
       dentista: ['', Validators.compose([
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(5)
       ])],
-      /*
       password: ['', Validators.compose([
         Validators.required,
-        Validators.minLength(6)
-      ])],*/
+        Validators.minLength(5)
+      ])]
     })
   }
 
   login(){
     this.authService.login(this.form.value.dentista).subscribe((response) => {
       this.dentistaService.setDentista(response.dentista)
+      console.log(response.dentista);
     })
+
   }
 
 }

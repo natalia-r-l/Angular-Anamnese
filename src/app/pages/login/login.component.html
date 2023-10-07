@@ -21,21 +21,21 @@
             />
             <div
               class="error-message"
-              *ngIf="form.get('dentista')?.errors?.['required'] && form.get('email')?.touched"
+              *ngIf="form.get('dentista')?.errors?.['required'] && form.get('dentista')?.touched"
             >
               O campo usuário não pode estar em branco.
             </div>
             <div
               class="error-message"
-              *ngIf="form.get('dentista')?.errors?.['minlength'] && form.get('email')?.touched"
+              *ngIf="form.get('dentista')?.errors?.['minlength'] && form.get('dentista')?.touched"
             >
-              Este campo deve ter pelo menos 6 caracteres.
+              Este campo deve ter pelo menos 5 caracteres.
             </div>
           </div>
-          <!-- <div class="input-field">
+          <div class="input-field">
             <label for="note">Senha</label>
             <input
-              type="textarea"
+              type="password"
               class="input"
               id="password"
               formControlName="password"
@@ -51,13 +51,14 @@
               class="error-message"
               *ngIf="form.get('password')?.errors?.['minlength'] && form.get('password')?.touched"
             >
-              Este campo deve ter pelo menos 6 caracteres.
+              Este campo deve ter pelo menos 5 caracteres.
             </div>
-          </div> -->
+          </div>
         </form>
         <button
         (click)="login()"
         class="btn login-btn"
+        [disabled]="!form.valid"
       >
         Entrar
       </button>
