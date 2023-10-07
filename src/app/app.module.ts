@@ -11,8 +11,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TableComponent } from './components/table/table.component';
-
 
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { DetailsComponent } from './pages/details/details.component';
@@ -24,7 +22,6 @@ import { DetailsComponent } from './pages/details/details.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    TableComponent,
     DetailsComponent
   ],
   imports: [
