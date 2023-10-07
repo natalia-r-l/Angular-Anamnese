@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DentistaService {
 
   dentista: string = '';
+  password: string = '';
 
   constructor() { }
 

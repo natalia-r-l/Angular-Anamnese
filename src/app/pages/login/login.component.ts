@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.authService.login(this.form.value.dentista).subscribe((response) => {
+    this.authService.login(this.form.value.dentista, this.form.value.password).subscribe((response) => {
       this.dentistaService.setDentista(response.dentista)
-      console.log(response.dentista);
+
     })
 
   }

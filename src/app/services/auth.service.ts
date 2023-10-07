@@ -32,17 +32,18 @@ export class AuthService {
   ) { }
 
   login(
-    dentista: Pick<Anamnese, "dentista">
+    dentista: Pick<Anamnese, "dentista">,
+    password: Pick<Anamnese, "dentista">
   ): Observable<{
   token: string;
   anamneseId: Pick<Anamnese, "id">,
   dentista: string
   }> {
     return this.httpclient
-    .post(`${this.url}/login`, { dentista }, this.httpOptions)
+    .post(`${this.url}/login`, { dentista, password},  this.httpOptions)
     .pipe(
       first(),
-      tap((tokenObject: { token: string; anamneseId: Pick<Anamnese, "id">, dentista: string } | any) => {
+      tap((tokenObject: { token: string; anamneseId: Pick<Anamnese, "id">, dentista: string, } | any) => {
         this.anamneseId = tokenObject.anamneseId;
         localStorage.setItem("token", tokenObject.token);
         this.isDentistLogged$.next(true);
