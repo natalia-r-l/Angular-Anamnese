@@ -5,7 +5,6 @@ import { AnamneseDetails } from 'src/app/models/anamneseDetails';
 import { AnamneseDetailsService } from 'src/app/services/anamnese-details.service';
 import { AuthService } from 'src/app/services/auth.service';
 
-
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',

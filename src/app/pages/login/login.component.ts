@@ -11,6 +11,7 @@ import { DentistaService } from 'src/app/services/dentista.service';
 export class LoginComponent implements OnInit {
 
   form!: FormGroup;
+  erroLogin: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,11 +33,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.authService.login(this.form.value.dentista, this.form.value.password).subscribe((response) => {
-      this.dentistaService.setDentista(response.dentista)
-
-    })
-
+    this.erroLogin= false;
+      this.authService.login(this.form.value.dentista, this.form.value.password).subscribe((response) => {
+      if(response) {
+        this.dentistaService.setDentista(response.dentista);
+      }
+      else {
+        this.erroLogin = true;
+      }
+    });
   }
-
 }
