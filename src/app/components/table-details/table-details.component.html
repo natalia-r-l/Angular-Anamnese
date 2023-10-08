@@ -1,0 +1,20 @@
+<div class="table-details">
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col">Pergunta</th>
+          <th scope="col">Resposta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let anamnesesDetail of anamnesesDetails">
+            <td>{{ anamnesesDetail.pergunta_descricao}}</td>
+            <td>{{ anamnesesDetail.pergunta_resposta}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

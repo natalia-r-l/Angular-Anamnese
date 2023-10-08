@@ -15,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { DetailsComponent } from './pages/details/details.component';
 import { ChartComponent } from './components/chart/chart.component';
+import { TableDetailsComponent } from './components/table-details/table-details.component';
+import { TableAnamnesesComponent } from './components/table-anamneses/table-anamneses.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ChartComponent } from './components/chart/chart.component';
     NavbarComponent,
     FooterComponent,
     DetailsComponent,
-    ChartComponent
+    ChartComponent,
+    TableDetailsComponent,
+    TableAnamnesesComponent
   ],
   imports: [
     BrowserModule,

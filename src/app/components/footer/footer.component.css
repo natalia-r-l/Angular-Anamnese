@@ -1,7 +1,7 @@
 .container-fluid{
   background-color: var(--rm-primary);
-  height: 150px;
-  position: static;
+  height: 120px;
+  position: absolute;
   width: 100vw;
   left: 0;
   bottom: 0;

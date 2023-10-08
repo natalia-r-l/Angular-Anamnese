@@ -1,3 +1,4 @@
+import { DateService } from './../../services/date.service';
 import { Component, OnInit } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js';
 
@@ -10,11 +11,15 @@ Chart.register(...registerables);
 })
 export class ChartComponent implements OnInit {
 
+  data!: any;
 
-  constructor() { }
+  constructor(
+    private dateservice: DateService,
+  ) { }
 
   ngOnInit(): void {
     this.RenderChart();
+    this.findDate(this.data);
   }
 
   RenderChart(){
@@ -26,7 +31,8 @@ export class ChartComponent implements OnInit {
           datasets: [{
             label: 'Quantidade de Anamneses',
             data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
+            borderWidth: 1,
+
           }]
         },
         options: {
@@ -37,7 +43,12 @@ export class ChartComponent implements OnInit {
           }
         }
     } )
-
-
   }
+
+  findDate(data: number){
+    this.dateservice.findDate(data).subscribe(response => {
+      this.data = response[0];
+      console.log('Datas:', response);
+    })
+  };
 }

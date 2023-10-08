@@ -1,7 +1,7 @@
 .navbar{
   background-color: var(--rm-primary);
   height: 90px;
-
+  width: 100vw;
 }
 
 .logout{
@@ -11,6 +11,7 @@
   margin: 0;
   background-color: transparent;
   border: none;
+  padding-right: 20px;
 }
 
 .logout:hover{

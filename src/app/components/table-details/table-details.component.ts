@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { AnamneseDetails } from 'src/app/models/anamneseDetails';
 import { AnamneseDetailsService } from 'src/app/services/anamnese-details.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  selector: 'app-table-details',
+  templateUrl: './table-details.component.html',
+  styleUrls: ['./table-details.component.css']
 })
-export class DetailsComponent implements OnInit {
+export class TableDetailsComponent implements OnInit {
 
   anamneseDetailId!: Pick<AnamneseDetails, "id">;
   anamnesesDetails!: any;
-  anamneseDetail!: any;
-
-  dentista!: string;
   id!: number;
 
   constructor(
