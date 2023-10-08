@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { DetailsComponent } from './pages/details/details.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DetailsComponent } from './pages/details/details.component';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    DetailsComponent
+    DetailsComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
