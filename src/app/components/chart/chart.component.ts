@@ -1,6 +1,7 @@
-import { DateService } from './../../services/date.service';
 import { Component, Input, OnInit } from '@angular/core';
+
 import { Chart, registerables } from 'node_modules/chart.js';
+
 import { Anamnese } from 'src/app/models/anamnese';
 
 Chart.register(...registerables);
@@ -15,9 +16,7 @@ export class ChartComponent implements OnInit {
   arrayData: any = [];
   data: any = [];
 
-  constructor(
-    private dateservice: DateService,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.findDate();
@@ -55,6 +54,7 @@ export class ChartComponent implements OnInit {
 
     for (let num of this.arrayData) {
       this.data[num] = this.data[num] ? this.data[num] + 1 : 1;
+      console.log('Array:', this.arrayData )
     }
   }
 }

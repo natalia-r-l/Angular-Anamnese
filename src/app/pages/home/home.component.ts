@@ -1,7 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { BnNgIdleService } from 'bn-ng-idle';
+
 import { Anamnese } from 'src/app/models/anamnese';
 import { AnamneseService } from 'src/app/services/anamnese.service';
 import { AuthService } from 'src/app/services/auth.service';

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { AnamneseDetails } from 'src/app/models/anamneseDetails';
 import { AnamneseDetailsService } from 'src/app/services/anamnese-details.service';
 import { AuthService } from 'src/app/services/auth.service';
