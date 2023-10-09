@@ -33,13 +33,15 @@ export class ChartComponent implements OnInit {
             label: 'Quantidade de Anamneses',
             data: this.data,
             borderWidth: 1,
-
           }]
         },
         options: {
           scales: {
             y: {
-              beginAtZero: true
+              beginAtZero: true,
+              ticks: {
+                stepSize: 1
+              }
             }
           }
         }
