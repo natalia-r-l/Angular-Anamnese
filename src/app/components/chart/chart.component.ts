@@ -1,6 +1,7 @@
 import { DateService } from './../../services/date.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js';
+import { Anamnese } from 'src/app/models/anamnese';
 
 Chart.register(...registerables);
 
@@ -10,16 +11,17 @@ Chart.register(...registerables);
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
-
-  data!: any;
+  @Input() anamneses!: Anamnese[];
+  arrayData: any = [];
+  data: any = [];
 
   constructor(
     private dateservice: DateService,
   ) { }
 
   ngOnInit(): void {
+    this.findDate();
     this.RenderChart();
-    this.findDate(this.data);
   }
 
   RenderChart(){
@@ -30,7 +32,7 @@ export class ChartComponent implements OnInit {
         'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
           datasets: [{
             label: 'Quantidade de Anamneses',
-            data: [12, 19, 3, 5, 2, 3],
+            data: this.data,
             borderWidth: 1,
 
           }]
@@ -45,10 +47,14 @@ export class ChartComponent implements OnInit {
     } )
   }
 
-  findDate(data: number){
-    this.dateservice.findDate(data).subscribe(response => {
-      this.data = response[0];
-      console.log('Datas:', response);
+  findDate() {
+    this.anamneses.forEach(anamnese => {
+      const str = anamnese.data.toString();
+      this.arrayData.push(+str.substring(9))
     })
-  };
+
+    for (let num of this.arrayData) {
+      this.data[num] = this.data[num] ? this.data[num] + 1 : 1;
+    }
+  }
 }

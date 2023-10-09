@@ -41,8 +41,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
-
   findAnamnese(dentista: string) {
     this.anamneseService.findAnamnese(dentista).subscribe(response => {
       this.anamneses = response[0];
