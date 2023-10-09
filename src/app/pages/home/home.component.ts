@@ -17,9 +17,7 @@ import { DentistaService } from 'src/app/services/dentista.service';
 export class HomeComponent implements OnInit {
 
   dentista!: string;
-
   anamneses!: any;
-
   anamneseId!: Pick<Anamnese, "id"> ;
 
   constructor(

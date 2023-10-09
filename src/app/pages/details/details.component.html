@@ -10,7 +10,7 @@
         <h6>Paciente: {{ anamnesesDetails[0].paciente }} </h6>
         <p class="date"> Anamnese:  {{ anamnesesDetails[0].id }} | Data: {{ anamnesesDetails[0].data }} </p>
 
-        <app-table-details></app-table-details>
+        <app-table-details [anamnesesDetails]="anamnesesDetails" ></app-table-details>
       </div>
     </div>
   </div>

@@ -54,7 +54,6 @@ export class ChartComponent implements OnInit {
 
     for (let num of this.arrayData) {
       this.data[num] = this.data[num] ? this.data[num] + 1 : 1;
-      console.log('Array:', this.arrayData )
     }
   }
 }

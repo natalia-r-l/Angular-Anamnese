@@ -1,9 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-import { Anamnese } from 'src/app/models/anamnese';
-import { AnamneseService } from 'src/app/services/anamnese.service';
-import { AuthService } from 'src/app/services/auth.service';
-import { DentistaService } from 'src/app/services/dentista.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-table-anamneses',
@@ -13,24 +8,11 @@ import { DentistaService } from 'src/app/services/dentista.service';
 export class TableAnamnesesComponent implements OnInit {
 
   dentista!: string;
-  anamneses!: any;
-  anamneseId!: Pick<Anamnese, "id"> ;
+  @Input() anamneses!: any;
 
-  constructor(
-    private authService: AuthService,
-    private anamneseService: AnamneseService,
-    private dentistaService: DentistaService,
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.dentista = this.dentistaService.getDentista();
-    this.findAnamnese(this.dentista);
-    this.anamneseId = this.authService.anamneseId;
-  }
+  ngOnInit(): void { }
 
-  findAnamnese(dentista: string) {
-    this.anamneseService.findAnamnese(dentista).subscribe(response => {
-      this.anamneses = response[0];
-    })
-  };
+
 }
